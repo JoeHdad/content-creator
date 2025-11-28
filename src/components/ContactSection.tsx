@@ -155,7 +155,7 @@ export const ContactSection = () => {
                   </div>
                   <div>
                     <div className="text-sm text-muted-foreground">WhatsApp</div>
-                    <div className="text-foreground font-medium">Quick Response</div>
+                    <div className="text-foreground font-medium">+970598158725</div>
                   </div>
                 </a>
               </div>
