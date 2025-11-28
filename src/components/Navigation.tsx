@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const navLinks = [
   { href: "#about", label: "About" },
@@ -70,7 +71,7 @@ export const Navigation = () => {
         </a>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-6">
           {navLinks.map((link) => (
             <a
               key={link.href}
@@ -88,6 +89,7 @@ export const Navigation = () => {
               {link.label}
             </a>
           ))}
+          <ThemeToggle />
           <Button
             variant="hero"
             size="sm"
@@ -133,6 +135,10 @@ export const Navigation = () => {
                 {link.label}
               </a>
             ))}
+            <div className="flex items-center justify-between pt-2 border-t border-border">
+              <span className="text-sm text-muted-foreground">Theme</span>
+              <ThemeToggle />
+            </div>
             <Button
               variant="hero"
               className="w-full mt-2"
