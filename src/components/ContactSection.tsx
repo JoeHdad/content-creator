@@ -4,24 +4,20 @@ import { useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Send, Mail, MessageCircle, Linkedin, Instagram, Twitter, Youtube, CheckCircle } from "lucide-react";
+import { Send, Mail, MessageCircle, Linkedin, Github, Briefcase, CheckCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 const socialLinks = [{
   icon: Linkedin,
-  href: "https://linkedin.com/in/yousef-alhaddad",
+  href: "https://www.linkedin.com/in/yousef-haddad-8163ab205/",
   label: "LinkedIn"
 }, {
-  icon: Instagram,
-  href: "https://instagram.com/yousef.alhaddad",
-  label: "Instagram"
+  icon: Github,
+  href: "https://github.com/JoeHdad",
+  label: "GitHub"
 }, {
-  icon: Twitter,
-  href: "https://twitter.com/yousef_alhaddad",
-  label: "X (Twitter)"
-}, {
-  icon: Youtube,
-  href: "https://youtube.com/@yousefalhaddad",
-  label: "YouTube"
+  icon: Briefcase,
+  href: "https://www.behance.net/yousefhaddad4",
+  label: "Behance"
 }];
 export const ContactSection = () => {
   const ref = useRef(null);
@@ -149,13 +145,13 @@ export const ContactSection = () => {
                   </div>
                 </a>
 
-                <a href="https://wa.me/201234567890" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-4 rounded-xl bg-secondary/50 hover:bg-secondary transition-colors group">
+                <a href="https://wa.me/972598158725" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-4 rounded-xl bg-secondary/50 hover:bg-secondary transition-colors group">
                   <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary transition-colors">
                     <MessageCircle className="text-primary group-hover:text-primary-foreground transition-colors" size={22} />
                   </div>
                   <div>
                     <div className="text-sm text-muted-foreground">WhatsApp</div>
-                    <div className="text-foreground font-medium">+970598158725</div>
+                    <div className="text-foreground font-medium">+972598158725</div>
                   </div>
                 </a>
               </div>

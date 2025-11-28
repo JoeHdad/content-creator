@@ -1,40 +1,24 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { ExternalLink, Play } from "lucide-react";
+import { ExternalLink } from "lucide-react";
+import cuppressoImage from "./Gemini_Generated_Image_hjicbthjicbthjic.png";
 
 const categories = ["All", "Social Media", "AI Video", "Branding", "Campaigns"];
 
 const portfolioItems = [
   {
     id: 1,
-    title: "AI-Enhanced Social Campaign",
-    description: "A viral campaign leveraging AI-generated visuals and data-driven content strategy for a tech startup.",
-    category: "Campaigns",
-    image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&h=400&fit=crop",
-    tags: ["AI", "Social Media", "Strategy"],
-    metrics: "2.5M+ Impressions",
-  },
-  {
-    id: 2,
-    title: "Viral Short-Form Series",
-    description: "A 10-part TikTok and Reels series that achieved organic viral growth through storytelling.",
-    category: "Social Media",
-    image: "https://images.unsplash.com/photo-1616469829581-73993eb86b02?w=600&h=400&fit=crop",
-    tags: ["TikTok", "Reels", "Viral"],
-    metrics: "5M+ Views",
-  },
-  {
-    id: 3,
     title: "Brand Storytelling Video",
     description: "Documentary-style brand video showcasing company culture and mission for a sustainable fashion brand.",
     category: "Branding",
     image: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=600&h=400&fit=crop",
     tags: ["Video", "Storytelling", "Brand"],
     metrics: "98% Engagement",
+    referenceLinks: ["https://www.behance.net/gallery/210774165/Logo-design"],
   },
   {
-    id: 4,
+    id: 2,
     title: "Product Launch Campaign",
     description: "Multi-platform content campaign for a new product launch including teaser videos and social assets.",
     category: "Campaigns",
@@ -43,22 +27,51 @@ const portfolioItems = [
     metrics: "150% ROI",
   },
   {
-    id: 5,
+    id: 3,
     title: "AI Video Production",
     description: "Fully AI-generated promotional video using Runway and custom prompts for a fintech company.",
     category: "AI Video",
     image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=600&h=400&fit=crop",
     tags: ["AI", "Runway", "Automation"],
     metrics: "70% Cost Savings",
+    referenceLinks: ["https://www.notion.so/My-Creative-Portfolio-24122ab3937f4449833b7cbaf02451a3?source=copy_link"],
   },
   {
-    id: 6,
+    id: 4,
     title: "Visual Identity Design",
     description: "Complete visual identity system including logo, color palette, and brand guidelines.",
     category: "Branding",
     image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=400&fit=crop",
     tags: ["Identity", "Design", "Guidelines"],
     metrics: "Full Brand System",
+  },
+  {
+    id: 5,
+    title: "Creative Social Media Design",
+    description: "High-impact creative social media content designed to captivate audiences and drive engagement across platforms.",
+    category: "Social Media",
+    image: "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=600&h=400&fit=crop",
+    tags: ["Creative", "Social Media", "Design"],
+    metrics: "Creative Impact",
+  },
+  {
+    id: 6,
+    title: "Advertisements",
+    description: "Immersive ad concepts and poster explorations crafted for performance-driven social campaigns.",
+    category: "Social Media",
+    image: "https://images.unsplash.com/photo-1474631245212-32dc3c8310c6?w=600&h=400&fit=crop",
+    tags: ["Ads", "Posters", "Social"],
+    metrics: "Clickable Showcase",
+    referenceLinks: ["https://www.behance.net/gallery/210773819/Posters"],
+  },
+  {
+    id: 7,
+    title: "Cuppresso Cafe",
+    description: "Lifestyle social media grid for Cuppresso highlighting signature iced coffee moments across locations.",
+    category: "Social Media",
+    image: cuppressoImage,
+    tags: ["Lifestyle", "Cafe", "Social"],
+    metrics: "Story-driven Grid",
   },
 ];
 
@@ -120,56 +133,20 @@ export const PortfolioSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
-              className="group bg-card rounded-xl overflow-hidden shadow-subtle hover:shadow-elevated transition-all duration-300 hover:-translate-y-1"
+              className="group"
             >
-              {/* Image */}
-              <div className="relative aspect-[4/3] overflow-hidden">
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/40 transition-colors duration-300 flex items-center justify-center">
-                  <div className="flex gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <button
-                      className="w-12 h-12 rounded-full bg-background/90 flex items-center justify-center hover:bg-background transition-colors"
-                      aria-label="View project"
-                    >
-                      <ExternalLink size={20} className="text-foreground" />
-                    </button>
-                    <button
-                      className="w-12 h-12 rounded-full bg-primary flex items-center justify-center hover:bg-primary/90 transition-colors"
-                      aria-label="Play video"
-                    >
-                      <Play size={20} className="text-primary-foreground" />
-                    </button>
-                  </div>
-                </div>
-                {/* Metrics Badge */}
-                <div className="absolute top-4 right-4 bg-background/90 backdrop-blur-sm px-3 py-1 rounded-full">
-                  <span className="text-xs font-medium text-foreground">{item.metrics}</span>
-                </div>
-              </div>
-
-              {/* Content */}
-              <div className="p-6">
-                <div className="flex flex-wrap gap-2 mb-3">
-                  {item.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="text-xs px-2 py-1 rounded-full bg-primary/10 text-primary font-medium"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-                <h3 className="text-heading-3 text-card-foreground mb-2 group-hover:text-primary transition-colors">
-                  {item.title}
-                </h3>
-                <p className="text-body-sm text-muted-foreground line-clamp-2">
-                  {item.description}
-                </p>
-              </div>
+              {item.referenceLinks?.[0] ? (
+                <a
+                  href={item.referenceLinks[0]}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block h-full"
+                >
+                  {renderCardContent(item)}
+                </a>
+              ) : (
+                renderCardContent(item)
+              )}
             </motion.div>
           ))}
         </div>
@@ -177,3 +154,56 @@ export const PortfolioSection = () => {
     </section>
   );
 };
+
+const renderCardContent = (item: (typeof portfolioItems)[number]) => (
+  <div className="bg-card rounded-xl overflow-hidden shadow-subtle hover:shadow-elevated transition-all duration-300 hover:-translate-y-1">
+    {/* Image */}
+    <div className="relative aspect-[4/3] overflow-hidden">
+      <img
+        src={item.image}
+        alt={item.title}
+        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+      />
+      <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/40 transition-colors duration-300 flex items-center justify-center">
+        <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          {item.referenceLinks?.[0] ? (
+            <span className="w-12 h-12 rounded-full bg-background/90 flex items-center justify-center">
+              <ExternalLink size={20} className="text-foreground" />
+            </span>
+          ) : (
+            <button
+              className="w-12 h-12 rounded-full bg-background/90 flex items-center justify-center hover:bg-background transition-colors"
+              aria-label="View project"
+            >
+              <ExternalLink size={20} className="text-foreground" />
+            </button>
+          )}
+        </div>
+      </div>
+      {/* Metrics Badge */}
+      <div className="absolute top-4 right-4 bg-background/90 backdrop-blur-sm px-3 py-1 rounded-full">
+        <span className="text-xs font-medium text-foreground">{item.metrics}</span>
+      </div>
+    </div>
+
+    {/* Content */}
+    <div className="p-6">
+      <div className="flex flex-wrap gap-2 mb-3">
+        {item.tags.map((tag) => (
+          <span
+            key={tag}
+            className="text-xs px-2 py-1 rounded-full bg-primary/10 text-primary font-medium"
+          >
+            {tag}
+          </span>
+        ))}
+      </div>
+      <h3 className="text-heading-3 text-card-foreground mb-2 group-hover:text-primary transition-colors">
+        {item.title}
+      </h3>
+      <p className="text-body-sm text-muted-foreground line-clamp-2">
+        {item.description}
+      </p>
+    </div>
+  </div>
+);

@@ -1,73 +1,125 @@
-# Welcome to your Lovable project
+# Yousef Haddad - Creative Portfolio
 
-## Project info
+A modern, responsive portfolio website showcasing creative excellence, AI-enhanced content creation, and strategic thinking.
 
-**URL**: https://lovable.dev/projects/80ca21c7-0a8e-4022-9bb0-f86f240e76a4
+## Project Overview
 
-## How can I edit this code?
+This is a professional portfolio built with cutting-edge web technologies, featuring:
 
-There are several ways of editing your application.
+- **Portfolio Section**: Curated selection of creative projects across multiple categories
+- **AI Studio**: Showcase of AI-enhanced content creation projects
+- **Services**: Comprehensive service offerings including content creation, visual storytelling, and AI-enhanced media
+- **Contact Section**: Direct contact options and social media links
 
-**Use Lovable**
+## Getting Started
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/80ca21c7-0a8e-4022-9bb0-f86f240e76a4) and start prompting.
+### Prerequisites
 
-Changes made via Lovable will be committed automatically to this repo.
+- Node.js (v16 or higher)
+- npm (v8 or higher)
 
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+### Installation
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
+# Clone the repository
 git clone <YOUR_GIT_URL>
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Navigate to the project directory
+cd text-to-task
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Install dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start the development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The application will be available at `http://localhost:3010`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Available Scripts
 
-**Use GitHub Codespaces**
+- `npm run dev` - Start development server with hot module replacement
+- `npm run build` - Build for production
+- `npm run build:dev` - Build for development mode
+- `npm run lint` - Run ESLint to check code quality
+- `npm run preview` - Preview the production build locally
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Technologies Used
 
-## What technologies are used for this project?
+This project is built with modern web technologies:
 
-This project is built with:
+- **Vite** - Next generation frontend tooling
+- **React 18** - UI library
+- **TypeScript** - Type-safe JavaScript
+- **Tailwind CSS** - Utility-first CSS framework
+- **shadcn/ui** - High-quality React components
+- **Framer Motion** - Animation library
+- **React Router** - Client-side routing
+- **React Hook Form** - Form management
+- **Zod** - Schema validation
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Project Structure
 
-## How can I deploy this project?
+```
+src/
+├── components/        # React components
+│   ├── ui/           # shadcn/ui components
+│   ├── PortfolioSection.tsx
+│   ├── AIStudioSection.tsx
+│   ├── ServicesSection.tsx
+│   ├── ContactSection.tsx
+│   └── ...
+├── pages/            # Page components
+├── hooks/            # Custom React hooks
+├── lib/              # Utility functions
+└── index.css         # Global styles
+```
 
-Simply open [Lovable](https://lovable.dev/projects/80ca21c7-0a8e-4022-9bb0-f86f240e76a4) and click on Share -> Publish.
+## Deployment
 
-## Can I connect a custom domain to my Lovable project?
+### Deploy to Netlify
 
-Yes, you can!
+1. **Build the project**:
+   ```sh
+   npm run build
+   ```
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+2. **Connect to Netlify**:
+   - Push your code to GitHub
+   - Connect your repository to Netlify
+   - Set build command: `npm run build`
+   - Set publish directory: `dist`
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+3. **Environment Variables** (if needed):
+   - Add any required environment variables in Netlify dashboard
+
+### Netlify Configuration
+
+The project is configured for Netlify deployment with:
+- Build command: `npm run build`
+- Publish directory: `dist`
+- Node version: 18.x (recommended)
+
+## Features
+
+- **Responsive Design**: Fully responsive across all devices
+- **Dark/Light Mode**: Theme toggle support
+- **Smooth Animations**: Framer Motion animations for enhanced UX
+- **SEO Optimized**: Semantic HTML and meta tags
+- **Performance**: Optimized bundle size and lazy loading
+- **Accessibility**: WCAG compliant components
+
+## Browser Support
+
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+
+## License
+
+This project is proprietary and confidential.
+
+## Contact
+
+For inquiries, please visit the portfolio website or use the contact form.
